@@ -7,6 +7,7 @@ before_install:
   - export CONDA_PREFIX=$HOME/conda
 
 install:
+  - pip install --upgrade setuptools
   - pip install -q click==5.1
   - pip install -q planemo
   - planemo conda_init --conda_prefix $CONDA_PREFIX
