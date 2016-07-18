@@ -1,7 +1,7 @@
 <tool id="cshl_fastx_collapser" version="1.0.0" name="Collapse">
     <description>sequences</description>
     <requirements>
-        <requirement type="package" version="0.0.13">fastx_toolkit</requirement>
+        <requirement type="package" version="0.0.14">fastx_toolkit</requirement> 
     </requirements>
     <command>
 <![CDATA[
@@ -11,21 +11,19 @@ zcat -f < '$input' | fastx_collapser -v -o '$output'
 #end if
 ]]>
     </command>
-
     <inputs>
         <param format="fasta,fastqsanger,fastqsolexa" name="input" type="data" label="Library to collapse" />
     </inputs>
     <outputs>
         <data format="fasta" name="output" metadata_source="input" />
     </outputs>
-    <!-- The order of sequences in the test output differ between 32 bit and 64 bit machines.
+    <!-- The order of sequences in the test output differ between 32 bit and 64 bit machines. -->
     <tests>
         <test>
             <param name="input" value="fasta_collapser1.fasta" />
             <param name="output" file="fasta_collapser1.out" />
         </test>
     </tests>
-    -->
     <help>
 **What it does**
 
